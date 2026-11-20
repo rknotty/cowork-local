@@ -1,0 +1,7 @@
+﻿State                    Ready                                    
+PID                      17192                                    
+Started                  2026-11-18 12:45:04Z                     
+Uptime                   19h 15m 17s                              
+Web URLs                 http://127.0.0.1:58777                   
+Public Catalog API       http://127.0.0.1:58777/v1/               
+Local Catalog (BYOM) API http://127.0.0.1:58777/catalogs/local/v1/

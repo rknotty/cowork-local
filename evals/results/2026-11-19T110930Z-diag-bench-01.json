@@ -1,0 +1,50 @@
+{
+  "summary": {
+    "run_count": 1,
+    "overall_pass_rate": 0.0,
+    "category_pass_rates": {
+      "tool_benchmark/single_call": 0.0
+    },
+    "gates": {
+      "single_step": {
+        "pass_rate": 0.0,
+        "threshold": 0.8,
+        "is_met": false
+      }
+    },
+    "failure_types": {
+      "wrong_tool": 1
+    },
+    "mean_steps": 2.0,
+    "mean_duration_ms": 134407,
+    "model_ids": [
+      "qwen3-8b-generic-gpu:2"
+    ]
+  },
+  "runs": [
+    {
+      "task_id": "bench-01",
+      "suite": "tool_benchmark",
+      "category": "single_call",
+      "run_number": 1,
+      "is_passed": false,
+      "failed_checks": [
+        "tool_called"
+      ],
+      "failure_type": "wrong_tool",
+      "steps": 2,
+      "prompt_tokens": 1047,
+      "completion_tokens": 0,
+      "duration_ms": 134407,
+      "tool_sequence": [
+        "list_dir"
+      ],
+      "model_id": "qwen3-8b-generic-gpu:2",
+      "answer_excerpt": "\n",
+      "tool_outcomes": [
+        "list_dir:error:PATH_NOT_ALLOWED"
+      ],
+      "done_reason": "answered"
+    }
+  ]
+}

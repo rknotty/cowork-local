@@ -1,0 +1,5 @@
+﻿Health: {"is_healthy": true, "endpoint": "http://127.0.0.1:58777", "duration_ms": 1000, "roles": {"orchestrator": "qwen3-14b-generic-gpu:2", "utility": "qwen3-14b-generic-gpu:2", "embeddings": "qwen3-embedding-0.6b-generic-gpu:1", "speech": "openai-whisper-small-generic-cpu:4"}}
+[FAIL] _check_chat: MODEL_GATEWAY_UNAVAILABLE chat call failed
+[FAIL] _check_tool_call: MODEL_GATEWAY_UNAVAILABLE chat call failed
+[FAIL] _check_embedding: MODEL_GATEWAY_UNAVAILABLE embedding call failed
+[FAIL] _check_transcription: MODEL_GATEWAY_UNAVAILABLE transcription call failed

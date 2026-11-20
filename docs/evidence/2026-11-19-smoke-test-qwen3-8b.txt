@@ -1,0 +1,5 @@
+﻿Health: {"is_healthy": true, "endpoint": "http://127.0.0.1:62610", "duration_ms": 343, "roles": {"orchestrator": "qwen3-8b-generic-gpu:2", "utility": "qwen3-8b-generic-gpu:2", "embeddings": "qwen3-embedding-0.6b-generic-gpu:1", "speech": "openai-whisper-small-generic-cpu:4"}}
+[PASS] streamed chat (27921 ms): 22 fragments, 24 tokens, model qwen3-8b-generic-gpu:2: 'A spreadsheet is a digital tool that organizes, analyzes, and stores data in a tabular format.'
+[PASS] tool call (13516 ms): multiply_numbers({'first': 7, 'second': 6})
+[PASS] embeddings (156 ms): 2 vectors of 1024 dimensions, first values [-0.029376428574323654, -0.02125484123826027, -0.013491231016814709]
+[PASS] transcription (875 ms): call completed, model openai-whisper-small-generic-cpu:4, transcript '(electronic beeping)'

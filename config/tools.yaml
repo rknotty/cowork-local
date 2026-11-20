@@ -1,0 +1,62 @@
+# Tool policy (plan section 9). Tiers decide the default approval behaviour.
+#
+#   0 read      automatic inside allowed folders
+#   1 write     automatic inside the session workspace, approval elsewhere
+#   2 execute   sandbox only, never on the host
+#   3 external  approval every time
+
+agent:
+  max_steps: 8
+  max_repair_attempts: 2
+  tool_result_max_tokens: 1000
+
+context_budget:
+  # Shares of the orchestrator context window (plan section 7, step 5).
+  system_share: 0.15
+  tools_and_skills_share: 0.25
+  conversation_share: 0.45
+  output_share: 0.15
+  skill_index_max_tokens: 800
+
+folders:
+  # Folders the user has connected. Paths outside these are refused.
+  # The session workspace is always allowed and is added at run time.
+  allowed: []
+
+sandbox:
+  distribution: local-cowork-sandbox
+  user: sandbox
+  wall_clock_timeout_seconds: 120
+  memory_cap_gb: 4
+  # DEVIATION FROM THE PLAN, set on 2026-11-19 because WSL is not installed on
+  # this device yet. The plan's rule is "tier 2 runs in the sandbox only".
+  # When true, the repository's own builder scripts (tools/build_*.py) may run
+  # on the host if the sandbox distribution is missing. They take a JSON
+  # specification, not code. Model-generated code (run_python) never runs on
+  # the host whatever this is set to.
+  # Set to false once scripts/setup-sandbox.ps1 has been run.
+  are_host_builders_allowed: true
+
+web_search:
+  # Not local by definition. Off by default and absent from the first build.
+  is_enabled: false
+
+# Tools sent to the model on every turn. Keep this under ten: each definition
+# costs context. Everything else is discovered through find_tool.
+core_tools:
+  - read_file
+  - list_dir
+  - search_files
+  # Core rather than deferred: the plan lists it as a tier 0 read tool, and
+  # an 8B model rarely thinks to discover it through find_tool.
+  - search_knowledge
+  # Core because a long document cannot be read any other way: a 19,000-token
+  # transcript exceeds the whole 16K window. Eleven core tools is one over
+  # the plan's guide of ten; measured cost is about 150 tokens per turn.
+  - extract_from_document
+  - write_file
+  - edit_file
+  - task_list
+  - ask_user
+  - load_skill
+  - find_tool

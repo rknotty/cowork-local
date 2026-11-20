@@ -1,0 +1,75 @@
+﻿+------------------------------------------------------------------------------+
+| Model Name         | Source | Type       | Size    | Device | Tools | Cached |
+|--------------------+--------+------------+---------+--------+-------+--------|
+| phi-4-reasoning    | Public | Chat       | 8.4 GB  | GPU    | ○     | ●      |
+| qwen3-embedding-0. | Public | Embedding  | 515 MB  | GPU    | ○     | ●      |
+| 6b                 |        |            |         |        |       |        |
+| deepseek-r1-1.5b   | Public | Chat       | 1.4 GB  | GPU    | ○     | ○      |
+| deepseek-r1-14b    | Public | Chat       | 9.8 GB  | GPU    | ○     | ○      |
+| deepseek-r1-7b     | Public | Chat       | 5.3 GB  | GPU    | ○     | ○      |
+| mistral-7b-v0.2    | Public | Chat       | 4.0 GB  | GPU    | ·     | ○      |
+| phi-3-mini-128k    | Public | Chat       | 2.1 GB  | GPU    | ·     | ○      |
+| phi-3-mini-4k      | Public | Chat       | 2.1 GB  | GPU    | ·     | ○      |
+| phi-3.5-mini       | Public | Chat       | 2.1 GB  | GPU    | ·     | ○      |
+| phi-4              | Public | Chat       | 8.4 GB  | GPU    | ·     | ○      |
+| qwen2.5-0.5b       | Public | Chat       | 528 MB  | GPU    | ●     | ○      |
+| qwen2.5-1.5b       | Public | Chat       | 1.3 GB  | GPU    | ●     | ○      |
+| qwen2.5-14b        | Public | Chat       | 8.8 GB  | GPU    | ●     | ○      |
+| qwen2.5-7b         | Public | Chat       | 5.5 GB  | GPU    | ●     | ○      |
+| qwen2.5-coder-0.5b | Public | Chat       | 528 MB  | GPU    | ●     | ○      |
+| qwen2.5-coder-1.5b | Public | Chat       | 1.3 GB  | GPU    | ●     | ○      |
+| qwen2.5-coder-14b  | Public | Chat       | 8.8 GB  | GPU    | ●     | ○      |
+| qwen2.5-coder-7b   | Public | Chat       | 4.7 GB  | GPU    | ●     | ○      |
+| clm-v0.1-8b        | Public | Other      | 8.3 GB  | GPU    | ○     | ○      |
+| gemma-4-e2b-it     | Public | Multimodal | 6.9 GB  | GPU    | ●     | ○      |
+| gpt-oss-20b        | Public | Chat       | 11.8 GB | GPU    | ○     | ○      |
+| kev-0.8b           | Public | Other      | 1.2 GB  | GPU    | ○     | ○      |
+| kev-4b             | Public | Other      | 5.5 GB  | GPU    | ○     | ○      |
+| ministral-3-3b-ins | Public | Multimodal | 3.6 GB  | GPU    | ●     | ○      |
+| truct-2512         |        |            |         |        |       |        |
+| mistral-nemo-12b-i | Public | Chat       | 7.3 GB  | GPU    | ●     | ○      |
+| nstruct            |        |            |         |        |       |        |
+| olmo-3-7b-instruct | Public | Chat       | 5.5 GB  | GPU    | ●     | ○      |
+| phi-4-mini         | Public | Chat       | 3.7 GB  | GPU    | ●     | ○      |
+| phi-4-mini-reasoni | Public | Chat       | 3.1 GB  | GPU    | ●     | ○      |
+| ng                 |        |            |         |        |       |        |
+| qwen3-0.6b         | Public | Chat       | 529 MB  | GPU    | ●     | ○      |
+| qwen3-1.7b         | Public | Chat       | 1.4 GB  | GPU    | ●     | ○      |
+| qwen3-14b          | Public | Chat       | 9.9 GB  | GPU    | ●     | ○      |
+| qwen3-4b           | Public | Chat       | 2.9 GB  | GPU    | ●     | ○      |
+| qwen3-8b           | Public | Chat       | 6.0 GB  | GPU    | ●     | ○      |
+| qwen3-embedding-8b | Public | Embedding  | 6.0 GB  | GPU    | ○     | ○      |
+| qwen3.5-0.8b       | Public | Multimodal | 1.4 GB  | GPU    | ●     | ○      |
+| qwen3.5-2b         | Public | Multimodal | 3.0 GB  | GPU    | ●     | ○      |
+| qwen3.5-2b-text    | Public | Chat       | 1.3 GB  | GPU    | ●     | ○      |
+| qwen3.5-4b         | Public | Multimodal | 4.1 GB  | GPU    | ●     | ○      |
+| qwen3.5-9b         | Public | Multimodal | 7.0 GB  | GPU    | ●     | ○      |
+| smollm3-3b         | Public | Chat       | 2.2 GB  | GPU    | ●     | ○      |
+| nemotron-3.5-asr-s | Public | Speech     | 756 MB  | CPU    | ·     | ○      |
+| treaming-0.6b      |        |            |         |        |       |        |
+| nemotron-speech-st | Public | Speech     | 696 MB  | CPU    | ·     | ○      |
+| reaming-en-0.6b    |        |            |         |        |       |        |
+| nemotron-speech-st | Public | Speech     | 729 MB  | CPU    | ·     | ○      |
+| reaming-es-0.6b    |        |            |         |        |       |        |
+| parakeet-tdt-0.6b- | Public | Speech     | 692 MB  | CPU    | ·     | ○      |
+| v2                 |        |            |         |        |       |        |
+| qwen3-vl-2b-instru | Public | Multimodal | 1.3 GB  | CPU    | ●     | ○      |
+| ct                 |        |            |         |        |       |        |
+| qwen3-vl-4b-instru | Public | Multimodal | 2.7 GB  | CPU    | ●     | ○      |
+| ct                 |        |            |         |        |       |        |
+| qwen3-vl-8b-instru | Public | Multimodal | 5.0 GB  | CPU    | ●     | ○      |
+| ct                 |        |            |         |        |       |        |
+| whisper-base       | Public | Speech     | 205 MB  | CPU    | ·     | ○      |
+| whisper-large-v3-t | Public | Speech     | 1.3 GB  | CPU    | ·     | ○      |
+| urbo               |        |            |         |        |       |        |
+| whisper-medium     | Public | Speech     | 937 MB  | CPU    | ·     | ○      |
+| whisper-small      | Public | Speech     | 438 MB  | CPU    | ·     | ○      |
+| whisper-tiny       | Public | Speech     | 131 MB  | CPU    | ·     | ○      |
++------------------------------------------------------------------------------+
+Type: Chat / Multimodal / Speech / Embedding / Ranking / Decision = model task.
+Device: NPU / GPU / CPU = default hardware target selected for this machine.
+Tools: supports tool calling; the model can request API calls or app actions 
+instead of only returning text.
+Cached: model files are already downloaded on this machine.
+Use --variants for every hardware-specific variant, provider, size, and cache 
+state.

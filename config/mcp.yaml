@@ -1,0 +1,22 @@
+# Local MCP servers (plan section 9, step 5). Only servers listed here start.
+#
+# Each server is third-party code running with your file permissions: review
+# it before adding it. Every MCP tool registers at tier 3 (approval every time)
+# until reclassified by hand under `tier_overrides`.
+#
+# Credentials never go in this file. Reference a Windows Credential Manager
+# entry by name under `credential_refs` and the orchestrator resolves it at
+# start-up.
+#
+# Example (disabled):
+#
+# servers:
+#   - name: filesystem-notes
+#     command: ["node", "C:/tools/mcp-notes/server.js"]
+#     startup_timeout_seconds: 20
+#     call_timeout_seconds: 60
+#     tier_overrides:
+#       search_notes: 0
+#     credential_refs: {}
+
+servers: []

@@ -1,0 +1,57 @@
+# Skill triggering tests (plan section 10, step 9). Five prompts that should
+# load each skill without naming it, and five that should not. Run with:
+#   python -m orchestrator.evaluation --suite skill_triggers --repeats 1
+
+skills:
+  slide-deck:
+    should:
+      - Put together a few slides on our Q3 results for Monday.
+      - I need a presentation explaining the new onboarding process.
+      - Can you turn these notes into a deck?
+      - Make me something to present at the team meeting about the migration.
+      - Build a short pitch for the board, five or six slides.
+    should_not:
+      - What does PPTX stand for?
+      - Write me an email about the migration.
+      - Summarise the onboarding process in two sentences.
+      - How many slides should a ten-minute talk have?
+      - List the files in the workspace.
+  word-document:
+    should:
+      - Write a report on the pilot results I can send as a Word file.
+      - Draft a formal letter to the supplier about late delivery as a document.
+      - I need a briefing paper for the director on the new policy.
+      - Produce a memo for all staff about the office move, as a docx.
+      - Can you write up a proper document describing the project scope?
+    should_not:
+      - What is the difference between a memo and a report?
+      - Give me three bullet points on the pilot results.
+      - Make a spreadsheet of the project costs.
+      - Turn this into slides.
+      - What is 12 times 9?
+  spreadsheet:
+    should:
+      - Make me a tracker for the actions from the last three meetings.
+      - I need a budget workbook with a total at the bottom.
+      - Put the supplier list into Excel so I can filter it.
+      - Create a risk register I can sort by score.
+      - Build a simple timesheet for five people across a week.
+    should_not:
+      - What is a pivot table?
+      - Write a paragraph describing our budget process.
+      - Make a deck about the budget.
+      - Explain what a risk register is in one sentence.
+      - Read status-alpha.md.
+  meeting-actions:
+    should:
+      - Here are the notes from this morning's call - who is doing what?
+      - Sort out the follow-ups from yesterday's steering group.
+      - Turn this transcript into minutes with actions.
+      - What did we agree in the meeting and who owns each action?
+      - Write up the outcomes from the workshop notes.
+    should_not:
+      - Book a meeting with the team for Thursday.
+      - What makes a good meeting agenda?
+      - Write a poem about meetings.
+      - Create a spreadsheet of the budget.
+      - How many people attend a typical steering group?

@@ -1,0 +1,22 @@
+# Runtime state: sessions, audit log, index. Never committed (plan section 5).
+data/
+!data/.gitkeep
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Node
+node_modules/
+web/dist/
+
+# Local overrides and anything that could hold a credential
+.env
+.env.*
+*.local.yaml

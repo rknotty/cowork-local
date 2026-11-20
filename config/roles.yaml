@@ -1,0 +1,46 @@
+# Role-to-model map (plan section 4). The application binds to roles, never to
+# model names, so changing a model is a one-line edit here.
+#
+# Aliases were chosen from `foundry model list` on this device on 2026-11-19
+# (see docs/evidence/). Any change here must be followed by the evaluation
+# suite before use (plan section 13, change control).
+
+gateway:
+  # Seconds. Local generation on a 14B model can take minutes for a long answer.
+  request_timeout_seconds: 300
+  load_timeout_seconds: 600
+  health_timeout_seconds: 5
+  # Loopback only. The gateway refuses any endpoint that is not on this host.
+  allowed_hosts: ["127.0.0.1", "localhost"]
+
+roles:
+  orchestrator:
+    # gpt-oss-20b does not list tool calling. qwen3-14b, the largest
+    # tool-capable model, crashes the Foundry daemon on generation on this
+    # device (docs/phase-0-findings.md). qwen3-8b is the plan's fallback tier.
+    alias: qwen3-8b
+    context_limit_tokens: 16384
+    temperature: 0.2
+    max_output_tokens: 2048
+    # Qwen3 thinks before every step by default. Measured 2026-11-19: a
+    # one-word answer took 8.6 s with thinking and 0.2 s without, and on
+    # multi-step tasks thinking consumed the whole output budget before any
+    # answer. Re-enable only if the evaluation shows it improves pass rates.
+    is_thinking_enabled: false
+  utility:
+    # On 32 GB there is no room for a second chat model: reuse the orchestrator.
+    alias: qwen3-8b
+    context_limit_tokens: 16384
+    temperature: 0.0
+    max_output_tokens: 512
+    is_thinking_enabled: false
+  embeddings:
+    alias: qwen3-embedding-0.6b
+    context_limit_tokens: 8192
+    temperature: 0.0
+    max_output_tokens: 0
+  speech:
+    alias: whisper-small
+    context_limit_tokens: 0
+    temperature: 0.0
+    max_output_tokens: 0

@@ -1,0 +1,134 @@
+/*
+ * Design tokens: SCC brand system, applied to a dense working tool.
+ * Brand values come from the scc-brand-alignment skill (tokens.json v2).
+ * Decisions and deviations are recorded in web/DESIGN.md; change both together.
+ *
+ * Every text/background pairing meets WCAG 2.2 AA (4.5:1 text, 3:1 control
+ * boundaries and focus). Where a brand colour fails on a surface, the
+ * accessible variant is used and noted in DESIGN.md.
+ */
+:root {
+  color-scheme: light;
+
+  /* SCC palette. Exact brand values: never tint these in place. */
+  --scc-black: #000000;
+  --scc-blue: #0541dc;
+  --scc-light-cyan: #6bd5ff;
+  --scc-magenta: #e5006b;
+  --scc-grey: #d8d8d8;
+  --scc-white: #ffffff;
+  --scc-surface-tint: #f5f5f5;
+  --scc-text-muted: #6b6b6b;
+  --scc-gradient-hero: linear-gradient(
+    135deg,
+    var(--scc-black) 0%,
+    var(--scc-blue) 55%,
+    var(--scc-light-cyan) 100%
+  );
+
+  /* Roles, light theme */
+  --colour-canvas: var(--scc-surface-tint);
+  --colour-surface: var(--scc-white);
+  --colour-sunken: var(--scc-surface-tint);
+  --colour-border: var(--scc-grey);
+  /* Brand muted grey doubles as the control boundary: 5.3:1 on white. */
+  --colour-border-strong: var(--scc-text-muted);
+  --colour-text: var(--scc-black);
+  --colour-text-muted: var(--scc-text-muted);
+  --colour-accent: var(--scc-blue);
+  /* Selection fill: brand blue at 8% rather than a new hue. Muted text on it is 4.7:1. */
+  --colour-accent-soft: rgb(5 65 220 / 8%);
+  --colour-on-accent: var(--scc-white);
+  /* Magenta is the brand emphasis colour; errors are the one emphasis this tool needs. 5.7:1 on white. */
+  --colour-danger: var(--scc-magenta);
+  /* Completed states recede: they carry a text label, never colour alone. */
+  --colour-success: var(--scc-text-muted);
+  --colour-caution: var(--scc-black);
+
+  --chrome-background: var(--scc-black);
+  --chrome-text: var(--scc-white);
+
+  --code-keyword: var(--scc-blue);
+  --code-string: var(--scc-magenta);
+  --code-number: var(--scc-black);
+  --code-comment: var(--scc-text-muted);
+  --code-title: var(--scc-black);
+  --code-attribute: var(--scc-blue);
+
+  /* Brand faces are installed locally on this device; nothing is downloaded,
+     because the interface must make no network requests. */
+  --font-display: "Bw Gradual", "Inter Tight", "Helvetica Neue", Arial, sans-serif;
+  /* Windows lists the installed DM Sans variable font under optical-size names
+     as well as the family name; any of them resolves to the same face. */
+  --font-sans:
+    "DM Sans", "DM Sans 14pt", "DM Sans 9pt", "Inter", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Mono", Consolas, "SF Mono", Menlo, monospace;
+
+  /* 4px grid. Brand spacing is an 8pt scale; 12px is kept for dense rows. */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+
+  /* Brand radius scale: small for controls, medium for cards and panels. */
+  --radius: 4px;
+  --radius-md: 8px;
+}
+
+/* Dark theme. Declared twice: once for the system preference and once for an
+   explicit choice in Settings; CSS cannot share the block. Surfaces start near
+   brand black and gain lightness with elevation; light cyan replaces blue as
+   the accent because blue on black is 2.5:1. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+
+    --colour-canvas: #0a0a0a;
+    --colour-surface: #141414;
+    --colour-sunken: #050505;
+    --colour-border: rgb(255 255 255 / 12%);
+    --colour-border-strong: rgb(255 255 255 / 45%);
+    --colour-text: #dedede;
+    --colour-text-muted: #9a9a9a;
+    --colour-accent: var(--scc-light-cyan);
+    --colour-accent-soft: rgb(107 213 255 / 12%);
+    --colour-on-accent: var(--scc-black);
+    /* Brand magenta is 3.2:1 on these surfaces; lightened for text. See DESIGN.md. */
+    --colour-danger: #ff5c9d;
+    --colour-success: #9a9a9a;
+    --colour-caution: #dedede;
+
+    --code-keyword: var(--scc-light-cyan);
+    --code-string: #ff5c9d;
+    --code-number: #dedede;
+    --code-comment: #9a9a9a;
+    --code-title: var(--scc-white);
+    --code-attribute: var(--scc-light-cyan);
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --colour-canvas: #0a0a0a;
+  --colour-surface: #141414;
+  --colour-sunken: #050505;
+  --colour-border: rgb(255 255 255 / 12%);
+  --colour-border-strong: rgb(255 255 255 / 45%);
+  --colour-text: #dedede;
+  --colour-text-muted: #9a9a9a;
+  --colour-accent: var(--scc-light-cyan);
+  --colour-accent-soft: rgb(107 213 255 / 12%);
+  --colour-on-accent: var(--scc-black);
+  --colour-danger: #ff5c9d;
+  --colour-success: #9a9a9a;
+  --colour-caution: #dedede;
+
+  --code-keyword: var(--scc-light-cyan);
+  --code-string: #ff5c9d;
+  --code-number: #dedede;
+  --code-comment: #9a9a9a;
+  --code-title: var(--scc-white);
+  --code-attribute: var(--scc-light-cyan);
+}
